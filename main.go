@@ -51,6 +51,7 @@ func init() {
 	db = sess.DB(dbName)
 }
 
+// home handler function
 func homeHandler(w http.ResponseWriter, r *http.Request) {
 	err := rnd.Template(w, http.StatusOK, []string{"static/home.gohtml"}, nil)
 	checkErr(err)
@@ -84,6 +85,7 @@ func fetchTodos(w http.ResponseWriter, r *http.Request) {
 	})
 }
 
+// create todo function 
 func createTodo(w http.ResponseWriter, r *http.Request) {
 	var t todo
 
@@ -232,6 +234,6 @@ func todoHandlers() http.Handler {
 
 func checkErr(err error) {
 	if err != nil {
-		log.Fatal(err) //respond with error page or message
+		log.Fatal(err) //respond with error page or message.
 	}
 }
