@@ -85,7 +85,7 @@ func fetchTodos(w http.ResponseWriter, r *http.Request) {
 	})
 }
 
-// create todo function 
+// create todo function
 func createTodo(w http.ResponseWriter, r *http.Request) {
 	var t todo
 
