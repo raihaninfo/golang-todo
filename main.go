@@ -190,8 +190,8 @@ func deleteTodo(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	stopChan := make(chan os.Signal)
-	signal.Notify(stopChan, os.Interrupt)
+	StopChan := make(chan os.Signal)
+	signal.Notify(StopChan, os.Interrupt)
 
 	r := chi.NewRouter()
 	r.Use(middleware.Logger)
@@ -213,7 +213,7 @@ func main() {
 		}
 	}()
 
-	<-stopChan
+	<-StopChan
 	log.Println("Shutting down server...")
 	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
 	srv.Shutdown(ctx)
