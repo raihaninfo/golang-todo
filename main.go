@@ -26,7 +26,7 @@ const (
 	collectionName string = "todo"
 	port           string = ":9000"
 )
-
+// Model struct
 type (
 	todoModel struct {
 		ID        bson.ObjectId `bson:"_id,omitempty"`
