@@ -26,7 +26,7 @@ const (
 	collectionName string = "todo"
 	port           string = ":9000"
 )
-// Model struct
+// Model struct 
 type (
 	todoModel struct {
 		ID        bson.ObjectId `bson:"_id,omitempty"`
@@ -42,6 +42,8 @@ type (
 		CreatedAt time.Time `json:"created_at"`
 	}
 )
+
+// init function
 
 func init() {
 	rnd = renderer.New()
@@ -231,7 +233,7 @@ func todoHandlers() http.Handler {
 	})
 	return rg
 }
-
+// error handeling function
 func checkErr(err error) {
 	if err != nil {
 		log.Fatal(err) //respond with error page or message.
