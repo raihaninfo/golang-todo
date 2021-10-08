@@ -59,6 +59,7 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 	checkErr(err)
 }
 
+//fetch Todo 
 func fetchTodos(w http.ResponseWriter, r *http.Request) {
 	todos := []todoModel{}
 
