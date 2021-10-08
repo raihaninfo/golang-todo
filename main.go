@@ -26,7 +26,8 @@ const (
 	collectionName string = "todo"
 	port           string = ":9000"
 )
-// Model struct 
+
+// Model struct
 type (
 	todoModel struct {
 		ID        bson.ObjectId `bson:"_id,omitempty"`
@@ -59,7 +60,7 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 	checkErr(err)
 }
 
-//fetch Todo 
+//fetch Todo
 func fetchTodos(w http.ResponseWriter, r *http.Request) {
 	todos := []todoModel{}
 
@@ -234,6 +235,7 @@ func todoHandlers() http.Handler {
 	})
 	return rg
 }
+
 // error handeling function
 func checkErr(err error) {
 	if err != nil {
